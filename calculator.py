@@ -40,3 +40,10 @@ while True:
 
     if choice == '7':
         break
+
+    if choice in ('1', '2', '3', '4', '5', '6'):
+        if choice in ('1', '2', '3', '4', '6'):
+            x = float(input("Enter first number: "))
+            y = float(input("Enter second number: "))
+        else:
+            x = float(input("Enter the number: "))
