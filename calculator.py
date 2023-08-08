@@ -13,3 +13,15 @@ def divide(x, y):
         return x/y
     else:
         return "Can't divide by zero"
+
+def square_root(x):
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return "Invalid Input"
+    
+def logarithm (x, base):
+    if x > 0 and base > 0 and base != 1:
+        return math.log(x, base)
+    else:
+        return "Invalid Input"
