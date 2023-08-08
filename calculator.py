@@ -61,3 +61,5 @@ while True:
         elif choice == '6':
             base = float(input("Enter the base for logarithm: "))
             print("Result:", logarithm(x, base))
+    else:
+        print("Invalid input")
