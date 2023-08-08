@@ -47,3 +47,17 @@ while True:
             y = float(input("Enter second number: "))
         else:
             x = float(input("Enter the number: "))
+
+        if choice == '1':
+            print("Result:", add(x, y))
+        elif choice == '2':
+            print("Result:", subtract(x, y))
+        elif choice == '3':
+            print("Result:", multiply(x, y))
+        elif choice == '4':
+            print("Result:", divide(x, y))
+        elif choice == '5':
+            print("Result:", square_root(x))
+        elif choice == '6':
+            base = float(input("Enter the base for logarithm: "))
+            print("Result:", logarithm(x, base))
