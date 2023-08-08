@@ -25,3 +25,18 @@ def logarithm (x, base):
         return math.log(x, base)
     else:
         return "Invalid Input"
+    
+while True:
+    print("Options:")
+    print("Enter '1' for addition")
+    print("Enter '2' for subtraction")
+    print("Enter '3' for multiplication")
+    print("Enter '4' for division")
+    print("Enter '5' for square root")
+    print("Enter '6' for logarithm")
+    print("Enter '7' to quit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '7':
+        break
