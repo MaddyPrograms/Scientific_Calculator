@@ -1,134 +1,118 @@
 import math
 
 def add(x, y):
-    return x + y
+  """Adds two numbers and returns the sum."""
+  return x + y
 
 def subtract(x, y):
-    return x - y
+  """Subtracts the second number from the first and returns the difference."""
+  return x - y
 
 def multiply(x, y):
-    return x * y
+  """Multiplies two numbers and returns the product."""
+  return x * y
 
 def divide(x, y):
-    if y != 0:
-        return x/y
-    else:
-        return "Can't divide by zero"
+  """Divides the first number by the second and returns the quotient.
+  Checks for division by zero and displays an error message."""
+  if y == 0:
+    print("Error: Division by zero is undefined. Please enter a non-zero divisor.")
+    return None
+  else:
+    return x / y
 
 def square_root(x):
-    if x >= 0:
-        return math.sqrt(x)
-    else:
-        return "Invalid Input"
-    
+  """Calculates the square root of a number and returns the result.
+  Checks for negative input and displays an error message."""
+  if x < 0:
+    print("Error: Square root of a negative number is not real.")
+    return None
+  else:
+    return math.sqrt(x)
+
 def logarithm(x, base):
-    if x > 0 and base > 0 and base != 1:
-        return math.log(x, base)
-    else:
-        return "Invalid Input"
+  """Calculates the logarithm of a number to a given base and returns the result.
+  Checks for invalid input and displays an error message."""
+  if x <= 0 or base <= 0 or base == 1:
+    print("Error: Invalid input for logarithm. Please ensure x > 0 and base > 0 and base != 1.")
+    return None
+  else:
+    return math.log(x, base)
 
 def power(x, y):
-    return math.pow(x, y)
+  """Raises the first number to the power of the second and returns the result."""
+  return math.pow(x, y)
 
 def factorial(x):
-    if x < 0:
-        return "Invalid Input"
-    elif x == 0 or x == 1:
-        return 1
-    else:
-        return math.factorial(x)
+  """Calculates the factorial of a number and returns the result.
+  Checks for negative or non-integer input and displays an error message."""
+  if x < 0:
+    print("Error: Factorial of a negative number is not defined.")
+    return None
+  elif not isinstance(x, int):
+    print("Error: Factorial is only defined for non-negative integers.")
+    return None
+  else:
+    return math.factorial(x)
 
 def sine(x):
-    return math.sin(x)
+  """Calculates the sine of an angle in radians and returns the result."""
+  return math.sin(x)
 
 def cosine(x):
-    return math.cos(x)
+  """Calculates the cosine of an angle in radians and returns the result."""
+  return math.cos(x)
 
 def tangent(x):
-    return math.tan(x)
+  """Calculates the tangent of an angle in radians and returns the result."""
+  return math.tan(x)
 
 def arcsin(x):
+  """Calculates the arcsine of a value and returns the angle in radians.
+  Checks for invalid input and displays an error message."""
+  if abs(x) > 1:
+    print("Error: Arcsine is only defined for values between -1 and 1.")
+    return None
+  else:
     return math.asin(x)
 
 def arccos(x):
+  """Calculates the arccosine of a value and returns the angle in radians.
+  Checks for invalid input and displays an error message."""
+  if abs(x) > 1:
+    print("Error: Arccosine is only defined for values between -1 and 1.")
+    return None
+  else:
     return math.acos(x)
 
 def arctan(x):
-    return math.atan(x)
+  """Calculates the arctangent of a value and returns the angle in radians."""
+  return math.atan(x)
 
 def round_to_decimal(x, n):
-    return round(x, n)
+  """Rounds a number to the specified number of decimal places and returns the result."""
+  return round(x, n)
 
 def absolute_value(x):
-    return abs(x)
+  """Calculates the absolute value of a number and returns the result."""
+  return abs(x)
 
-while True:
-    print("Options:")
-    print("Enter '1' for addition")
-    print("Enter '2' for subtraction")
-    print("Enter '3' for multiplication")
-    print("Enter '4' for division")
-    print("Enter '5' for square root")
-    print("Enter '6' for logarithm")
-    print("Enter '7' for power")
-    print("Enter '8' for factorial")
-    print("Enter '9' for sine")
-    print("Enter '10' for cosine")
-    print("Enter '11' for tangent")
-    print("Enter '12' for arcsin")
-    print("Enter '13' for arccos")
-    print("Enter '14' for arctan")
-    print("Enter '15' for rounding")
-    print("Enter '16' for absolute value")
-    print("Enter '17' to quit")
+def history():
+  """Displays a list of past calculations (to be implemented)."""
+  print("History feature not yet implemented.")
 
-    choice = input("Enter your choice: ")
+def custom_function():
+  """Defines a custom function using existing operations (to be implemented)."""
+  print("Custom function feature not yet implemented.")
 
-    if choice == '17':
-        break
+def graph(function):
+  """Plots the graph of a function (to be implemented)."""
+  print("Graphing feature not yet implemented.")
 
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'):
-        if choice in ('1', '2', '3', '4', '6', '7'):
-            x = float(input("Enter first number: "))
-            y = float(input("Enter second number: "))
-        elif choice in ('9', '10', '11', '12', '13', '14'):
-            x = float(input("Enter the angle in radians: "))
-        else:
-            x = float(input("Enter the number: "))
+def main():
+  """Prints the menu and handles user input and function calls."""
+  print("Welcome to the enhanced calculator!")
+  print("Enter 'help' for a list of available functions.")
 
-        if choice == '1':
-            print("Result:", add(x, y))
-        elif choice == '2':
-            print("Result:", subtract(x, y))
-        elif choice == '3':
-            print("Result:", multiply(x, y))
-        elif choice == '4':
-            print("Result:", divide(x, y))
-        elif choice == '5':
-            print("Result:", square_root(x))
-        elif choice == '6':
-            base = float(input("Enter the base for logarithm: "))
-            print("Result:", logarithm(x, base))
-        elif choice == '7':
-            print("Result:", power(x, y))
-        elif choice == '8':
-            print("Result:", factorial(x))
-        elif choice == '9':
-            print("Result:", sine(x))
-        elif choice == '10':
-            print("Result:", cosine(x))
-        elif choice == '11':
-            print("Result:", tangent(x))
-        elif choice == '12':
-            print("Result:", arcsin(x))
-        elif choice == '13':
-            print("Result:", arccos(x))
-        elif choice == '14':
-            print("Result:", arctan(x))
-        elif choice == '15':
-            n = int(input("Enter the number of decimal places: "))
-            print("Result:", round_to_decimal(x, n))
-        elif choice == '16':
-            print("Result:", absolute_value(x))
-    else:
-        print("Invalid input")
+  while True:
+    choice = input("Enter your choice:
